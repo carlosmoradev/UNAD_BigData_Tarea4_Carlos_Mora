@@ -1,0 +1,12 @@
+{"_id": "payments-api", "team": "payments", "tier": 1, "env": "prod", "region": "us-east-1", "owner": {"name": "Marta Ruiz", "oncall": "oncall-payments@example.com"}, "dependencies": ["auth-svc", "postgres-main"]}
+{"_id": "auth-svc", "team": "identity", "tier": 1, "env": "prod", "region": "us-east-1", "owner": {"name": "Diego Peña", "oncall": "oncall-identity@example.com"}, "dependencies": ["postgres-main", "redis-cache"]}
+{"_id": "orders-api", "team": "commerce", "tier": 1, "env": "prod", "region": "us-east-1", "owner": {"name": "Luis Gómez", "oncall": "oncall-commerce@example.com"}, "dependencies": ["payments-api", "inventory-svc"]}
+{"_id": "inventory-svc", "team": "commerce", "tier": 2, "env": "prod", "region": "us-west-2", "owner": {"name": "Marta Ruiz", "oncall": "oncall-commerce@example.com"}, "dependencies": ["postgres-main"]}
+{"_id": "notifications-worker", "team": "engagement", "tier": 3, "env": "prod", "region": "us-east-1", "owner": {"name": "Diego Peña", "oncall": "oncall-engagement@example.com"}, "dependencies": ["queue-broker"]}
+{"_id": "billing-worker", "team": "payments", "tier": 2, "env": "prod", "region": "us-east-1", "owner": {"name": "Sofía Castro", "oncall": "oncall-payments@example.com"}, "dependencies": ["queue-broker", "payments-api"]}
+{"_id": "report-generator", "team": "data", "tier": 3, "env": "prod", "region": "eu-west-1", "owner": {"name": "Ana Torres", "oncall": "oncall-data@example.com"}, "dependencies": ["postgres-main"]}
+{"_id": "search-api", "team": "discovery", "tier": 2, "env": "prod", "region": "eu-west-1", "owner": {"name": "Sofía Castro", "oncall": "oncall-discovery@example.com"}, "dependencies": ["redis-cache"]}
+{"_id": "gateway", "team": "platform", "tier": 1, "env": "prod", "region": "us-east-1", "owner": {"name": "Diego Peña", "oncall": "oncall-platform@example.com"}, "dependencies": ["auth-svc", "orders-api"]}
+{"_id": "postgres-main", "team": "platform", "tier": 1, "env": "prod", "region": "us-east-1", "owner": {"name": "Ana Torres", "oncall": "oncall-platform@example.com"}, "dependencies": []}
+{"_id": "redis-cache", "team": "platform", "tier": 2, "env": "prod", "region": "us-east-1", "owner": {"name": "Diego Peña", "oncall": "oncall-platform@example.com"}, "dependencies": []}
+{"_id": "queue-broker", "team": "platform", "tier": 2, "env": "prod", "region": "us-east-1", "owner": {"name": "Ana Torres", "oncall": "oncall-platform@example.com"}, "dependencies": []}
