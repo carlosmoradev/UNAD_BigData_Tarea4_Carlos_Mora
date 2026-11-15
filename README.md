@@ -47,6 +47,9 @@ docker run -d --name tarea4-mongo -p 127.0.0.1:27017:27017 -v "$PWD/data:/seed:r
 # 3. Ejecutar todos los scripts, o uno en particular
 ./queries/run.sh
 ./queries/run.sh 03_filters_joins.js
+
+# Salida compacta: un documento por línea (mismas consultas, solo cambia el formato)
+COMPACT=1 ./queries/run.sh 04_aggregations.js
 ```
 
 Para regenerar los datos: `python3 generate_data.py` (escribe en `data/`).
